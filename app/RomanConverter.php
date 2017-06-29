@@ -6,13 +6,13 @@ namespace App;
 class RomanConverter {
 
     private static $mapping = [
-        '1' => 'I',
-        '5' => 'V',
-        '10' => 'X',
-        '50' => 'L',
-        '100' => 'C',
-        '500' => 'D',
         '1000' => 'M',
+        '500' => 'D',
+        '100' => 'C',
+        '50' => 'L',
+        '10' => 'X',
+        '5' => 'V',
+        '1' => 'I',
     ];
 
 
@@ -21,9 +21,12 @@ class RomanConverter {
         $roman = '';
 
         foreach (self::$mapping as $key => $value) {
-            if ($key == $number) {
-                $roman = $value;
-            }
+             while ($number >= $key) {
+                 $roman .= $value;
+
+                 $number -= $key;
+             }
+
         }
 
         return $roman;
