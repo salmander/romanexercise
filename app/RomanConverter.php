@@ -14,12 +14,18 @@ class RomanConverter {
         '500' => 'D',
         '1000' => 'M',
     ];
+
+
     public static function toRoman(int $number): string
     {
+        $roman = '';
+
         foreach (self::$mapping as $key => $value) {
             if ($key == $number) {
-                return $value;
+                $roman = $value;
             }
         }
+
+        return $roman;
     }
 }

@@ -39,4 +39,40 @@ class RomanConverterTest extends TestCase
         $this->assertEquals('M', RomanConverter::toRoman(1000));
     }
 
+    public function test3()
+    {
+        $this->assertEquals('III', RomanConverter::toRoman(3));
+    }
+
+    public function test8()
+    {
+        $this->assertEquals('VIII', RomanConverter::toRoman(8));
+    }
+
+    public function test16()
+    {
+        $this->assertEquals('XVI', RomanConverter::toRoman(16));
+    }
+
+    public function test78()
+    {
+        $this->assertEquals('LXXVIII', RomanConverter::toRoman(78));
+    }
+
+    public function test255()
+    {
+        $this->assertEquals('CCLV', RomanConverter::toRoman(255));
+    }
+
+    public function test512()
+    {
+        $this->assertEquals('DXII', RomanConverter::toRoman(512));
+    }
+
+    public function test777()
+    {
+        $this->assertEquals('DCCLXXVII', RomanConverter::toRoman(777));
+    }
+
+
 }
